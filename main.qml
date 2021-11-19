@@ -11,8 +11,16 @@ Window {
     Item {
         id: test
       TextField {
+          validator: DoubleValidator{}
+
             placeholderText: "test"
 
       }
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:0.75}D{i:2}D{i:1}
+}
+##^##*/
