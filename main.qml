@@ -52,7 +52,6 @@ Window {
                 ComboBox {
                     id : comboope
                     anchors.horizontalCenter: parent.horizontalCenter
-
                     anchors.left: value_A.right
                     model :["+", "-", "x"]
 
@@ -62,7 +61,7 @@ Window {
                 id: value_B
                 height: parent.height /3
                 width:  parent.width /3
-anchors.left: caseope.right
+                anchors.left: caseope.right
                 anchors.verticalCenter: parent.verticalCenter
                 TextField {
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -101,21 +100,31 @@ anchors.left: caseope.right
             anchors.top: res.bottom
             height: parent.height /3
 
+
             Item {
                 id: resetnb
-                anchors.left: parent.left
                 anchors.right: parent.right
-                Text {
+                anchors.verticalCenter: parent.verticalCenter
+                width: parent.width /2
+                height: parent.height /3
+                Button {
+
                     id: resetnbb
+                    font.pointSize: 21
+                    anchors.horizontalCenter: parent.horizontalCenter
                     text: qsTr("AC")
                 }
             }
             Item {
                 id: signegal
-                anchors.left: parent.left
-                anchors.right:parent.right
-                Text {
+                anchors.left:parent.left
+                anchors.verticalCenter: parent.verticalCenter
+                width: parent.width /2
+                height: parent.height /3
+                Button {
                     id: signegali
+                    font.pointSize: 21
+                    anchors.horizontalCenter: parent.horizontalCenter
                     text: qsTr("=")
                 }
             }
