@@ -30,38 +30,53 @@ Window {
             anchors.right: parent.right
             height: parent.height /3
 
+
             Item {
                 id: nb_a
-                width: parent.width /3
+                height: parent.height /3
+                width:  parent.width /3
+                anchors.verticalCenter: parent.verticalCenter
                 TextField {
+                    id : value_A
+                    anchors.horizontalCenter: parent.horizontalCenter
                     validator: DoubleValidator{}
-
                     placeholderText: "Nombre A"
-
                 }
             }
             Item {
-                id: opelist
-                anchors.left: nb_a.right
+                id: caseope
+                height: parent.height /3
+                width:  parent.width /3
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
                 ComboBox {
                     id : comboope
+                    anchors.horizontalCenter: parent.horizontalCenter
+
+                    anchors.left: value_A.right
                     model :["+", "-", "x"]
 
                 }
-
             }
             Item {
-                id: nb_b
-anchors.rightMargin: parent.width
+                id: value_B
+                height: parent.height /3
+                width:  parent.width /3
+anchors.left: caseope.right
+                anchors.verticalCenter: parent.verticalCenter
                 TextField {
+                    anchors.horizontalCenter: parent.horizontalCenter
+
                     validator: DoubleValidator{}
-
                     placeholderText: "Nombre B"
-
                 }
             }
 
+
+
+
         }
+
 
 
         Item {
@@ -72,6 +87,9 @@ anchors.rightMargin: parent.width
             height: parent.height /3
             Text {
                 id: resval
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.verticalCenter: parent.verticalCenter
+                font.pointSize: 21
                 text: qsTr("RESULTAT")
             }
         }
