@@ -5,22 +5,28 @@ calculatrice::calculatrice(QObject *parent) : QObject(parent)
 
 }
 
-float calculatrice::operate(float a, float b, E_ope ope)
+
+
+float calculatrice::operate(float NombreA, float NombreB,E_ope ope)
 {
     float res = 0;
 
     switch (ope) {
     case Multiply:
-        res = a *b;
+        res = NombreA *NombreB;
         break;
     case Substrate:
-        res = a-b;
+        res = NombreA-NombreB;
         break;
     case Add:
-        res = a+b;
+        res = NombreA+NombreB;
         break;
     default:
         throw "ça n'arrive jamais";
     }
     return res;
 }
+
+
+
+

@@ -3,14 +3,13 @@ import QtQuick.Window 2.14
 import QtQuick.Controls 2.14
 import QtQuick 2.12
 import QtQuick 2.0
-
+import Calculatrice 1.2
 
 Window {
     width: 640
     height: 480
     visible: true
     title: qsTr("Hello World")
-
 
     Grid{
         id: calcpart
@@ -49,21 +48,41 @@ Window {
                 width:  parent.width /3
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
+
+                ListModel{
+                    id : opeModel
+                    ListElement {
+                        key : "*"
+                        ope : Calculatrice.Multiply
+                    }
+                    ListElement {
+                        key : "+"
+                        ope : Calculatrice.Add
+
+                    }
+                    ListElement{
+                        key : "-"
+                        ope : Calculatrice.Substrate
+                    }
+                }
+
                 ComboBox {
                     id : comboope
+                    textRole: "key"
                     anchors.horizontalCenter: parent.horizontalCenter
                     anchors.left: value_A.right
-                    model :["+", "-", "x"]
-
+                    model:  opeModel
                 }
+
             }
             Item {
-                id: value_B
+                id: nb_b
                 height: parent.height /3
                 width:  parent.width /3
                 anchors.left: caseope.right
                 anchors.verticalCenter: parent.verticalCenter
                 TextField {
+                    id: value_B
                     anchors.horizontalCenter: parent.horizontalCenter
 
                     validator: DoubleValidator{}
@@ -89,7 +108,7 @@ Window {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
                 font.pointSize: 21
-                text: qsTr("RESULTAT")
+                text: operate
             }
         }
         Grid{
@@ -99,8 +118,6 @@ Window {
             anchors.right: parent.right
             anchors.top: res.bottom
             height: parent.height /3
-
-
             Item {
                 id: resetnb
                 anchors.right: parent.right
@@ -108,11 +125,15 @@ Window {
                 width: parent.width /2
                 height: parent.height /3
                 Button {
-
                     id: resetnbb
                     font.pointSize: 21
                     anchors.horizontalCenter: parent.horizontalCenter
                     text: qsTr("AC")
+                    onClicked:{
+                        resval.text = "0";
+                        value_A.text = "";
+                        value_B.text = "";
+                    }
                 }
             }
             Item {
@@ -121,19 +142,27 @@ Window {
                 anchors.verticalCenter: parent.verticalCenter
                 width: parent.width /2
                 height: parent.height /3
+                Calculatrice{
+                    id : myCalculatrice
+
+                }
+
                 Button {
                     id: signegali
                     font.pointSize: 21
                     anchors.horizontalCenter: parent.horizontalCenter
                     text: qsTr("=")
+                    onClicked: { resval.text = myCalculatrice.operate(value_A.text,value_B.text,opeModel.get(comboope.currentIndex).ope);
+                    }
                 }
             }
         }
     }
 }
+
 /*##^##
 Designer {
     D{i:0;formeditorZoom:0.75}D{i:4}D{i:3}D{i:7}D{i:6}D{i:9}D{i:8}D{i:2}D{i:12}D{i:11}
-D{i:15}D{i:14}D{i:17}D{i:16}D{i:13}D{i:1}
+D{i:15}D{i:14}D{i:17}D{i:18}D{i:16}D{i:13}D{i:1}
 }
 ##^##*/
