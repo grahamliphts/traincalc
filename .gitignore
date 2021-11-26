@@ -71,3 +71,7 @@ Thumbs.db
 *.dll
 *.exe
 
+applicationdata.cpp
+applicationdata.h
+Saisie.qml
+calculatrice.qml

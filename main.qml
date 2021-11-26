@@ -11,15 +11,9 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
-    Grid{
+    Rectangle{
         id: calcpart
-        columns: 1
-        rows: 3
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top:parent.top
-        anchors.bottom: parent.bottom
-
+        anchors.fill: parent
 
         Grid{
             id: calcpart1
@@ -32,23 +26,28 @@ Window {
 
             Item {
                 id: nb_a
-                height: parent.height /3
                 width:  parent.width /3
                 anchors.verticalCenter: parent.verticalCenter
                 TextField {
                     id : value_A
-                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.horizontalCenter:parent.horizontalCenter
                     validator: DoubleValidator{}
                     placeholderText: "Nombre A"
                 }
             }
             Item {
                 id: caseope
-                height: parent.height /3
                 width:  parent.width /3
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
 
+
+                ComboBox {
+                    id : comboope
+                    textRole: "key"
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    model:  opeModel
+                }
                 ListModel{
                     id : opeModel
                     ListElement {
@@ -66,24 +65,16 @@ Window {
                     }
                 }
 
-                ComboBox {
-                    id : comboope
-                    textRole: "key"
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.left: value_A.right
-                    model:  opeModel
-                }
 
-            }
+
             Item {
                 id: nb_b
-                height: parent.height /3
                 width:  parent.width /3
-                anchors.left: caseope.right
+                anchors.left: parent.right
+                anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
                 TextField {
                     id: value_B
-                    anchors.horizontalCenter: parent.horizontalCenter
 
                     validator: DoubleValidator{}
                     placeholderText: "Nombre B"
@@ -95,7 +86,7 @@ Window {
 
         }
 
-
+}
 
         Item {
             id: res
@@ -108,22 +99,21 @@ Window {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
                 font.pointSize: 21
-                text: operate
+                text: "Resultat"
             }
         }
         Grid{
             id: calcpart2
             columns: 2
+            rows : 1
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: res.bottom
-            height: parent.height /3
             Item {
                 id: resetnb
                 anchors.right: parent.right
                 anchors.verticalCenter: parent.verticalCenter
                 width: parent.width /2
-                height: parent.height /3
                 Button {
                     id: resetnbb
                     font.pointSize: 21
@@ -141,7 +131,6 @@ Window {
                 anchors.left:parent.left
                 anchors.verticalCenter: parent.verticalCenter
                 width: parent.width /2
-                height: parent.height /3
                 Calculatrice{
                     id : myCalculatrice
 
@@ -162,7 +151,7 @@ Window {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.75}D{i:4}D{i:3}D{i:7}D{i:6}D{i:9}D{i:8}D{i:2}D{i:12}D{i:11}
-D{i:15}D{i:14}D{i:17}D{i:18}D{i:16}D{i:13}D{i:1}
+    D{i:0;formeditorZoom:0.75}D{i:4}D{i:3}D{i:7}D{i:8}D{i:13}D{i:12}D{i:6}D{i:2}D{i:16}
+D{i:15}D{i:18}D{i:20}D{i:17}D{i:1}
 }
 ##^##*/
