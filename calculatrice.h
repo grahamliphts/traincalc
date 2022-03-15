@@ -14,7 +14,7 @@ class calculatrice : public QObject
 private:
     float res;
     float nbrbis;
-    int i;
+    int nbrope;
     float resegal;
     int dot;
     int x;
@@ -39,7 +39,7 @@ public:
     E_result getRes() const;
 
     explicit calculatrice(QObject *parent = nullptr);
-    Q_INVOKABLE float key(float nbinput);
+    Q_INVOKABLE float keyboard(float nbinput);
     Q_INVOKABLE int operate (E_ope);
     Q_INVOKABLE float result (E_result);
     Q_INVOKABLE void reset (void);

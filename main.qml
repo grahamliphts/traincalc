@@ -121,7 +121,7 @@
                                                 anchors.top: button8.bottom
                                                 anchors.left : button7.right
                                                 onClicked: {
-                                                  resval.text = myCalculatrice.key(0)
+                                                  resval.text = myCalculatrice.keyboard(0)
 
                                                 }
                                             }
@@ -134,7 +134,7 @@
                                                 anchors.leftMargin: parent.margin
                                                 anchors.top: parent.top
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.key(1)
+                                                    resval.text = myCalculatrice.keyboard(1)
 
                                                 }
                                             }
@@ -147,7 +147,7 @@
 
                                                 anchors.left: button1.right
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.key(2)
+                                                    resval.text = myCalculatrice.keyboard(2)
 
                                                 }
                                             }
@@ -159,7 +159,7 @@
                                                 width: parent.width/5
                                                 anchors.left: button2.right
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.key(3)
+                                                    resval.text = myCalculatrice.keyboard(3)
 
                                                 }
                                             }
@@ -172,7 +172,7 @@
                                                 anchors.top: button1.bottom
                                                 onClicked: {
 
-                                                    resval.text = myCalculatrice.key(4)
+                                                    resval.text = myCalculatrice.keyboard(4)
                                                 }
                                             }
                                             Button{
@@ -184,7 +184,7 @@
                                                 anchors.left: button4.right
                                                 anchors.top: button2.bottom
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.key(5)
+                                                    resval.text = myCalculatrice.keyboard(5)
 
                                                 }
                                             }
@@ -197,7 +197,7 @@
                                                 height : parent.height /4
                                                 width: parent.width/5
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.key(6)
+                                                    resval.text = myCalculatrice.keyboard(6)
 
                                                 }
                                             }
@@ -209,7 +209,7 @@
                                                 width: parent.width/5
                                                 anchors.top: button4.bottom
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.key(7)
+                                                    resval.text = myCalculatrice.keyboard(7)
 
                                                 }
                                             }
@@ -222,7 +222,7 @@
                                                 anchors.left: button7.right
                                                 anchors.top: button5.bottom
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.key(8)
+                                                    resval.text = myCalculatrice.keyboard(8)
 
                                                 }
                                             }
@@ -236,7 +236,7 @@
                                                 anchors.left: button8.right
 
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.key(9)
+                                                    resval.text = myCalculatrice.keyboard(9)
 
                                                 }
                                             }
@@ -256,9 +256,9 @@
 
 
                                             Button {
-                                                id: signegali
+                                                id: signequal
                                                 anchors.top: buttonsubstrate.bottom
-                                                anchors.left: buttonsup.right
+                                                anchors.left: buttondel.right
                                                 font.pointSize: parent.height/10
                                                 text: qsTr("=")
                                                 height : parent.height /4
@@ -267,7 +267,7 @@
                                                 }
                                             }
                                             Button {
-                                                id : buttonsup
+                                                id : buttondel
                                                 anchors.top: button9.bottom
                                                 anchors.left: button0.right
                                                 font.pointSize: parent.height/10

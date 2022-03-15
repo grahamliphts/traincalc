@@ -5,14 +5,14 @@
 
                                     res = 0;
                                     nbrbis = 0;
-                                    i = 0;
+                                    nbrope = 0;
                                     resegal = 0;
                                     dot = 0;
                                     x = 0;
                                     nega = 0;
                                     }
 
-                                    float calculatrice::key(float nbinput)
+                                    float calculatrice::keyboard(float nbinput)
                                     {
                                         if (nega == 1)
                                         {
@@ -48,7 +48,7 @@
 
                                                   nbrbis = res;
                                                   res = 0;
-                                                  i = 1;
+                                                  nbrope = 1;
                                                   dot = 0;
                                                   x = 0;
                                                   nega = 0;
@@ -60,7 +60,7 @@
 
                                                   nbrbis = res;
                                                   res = 0;
-                                                  i = 2;
+                                                  nbrope = 2;
                                                   dot = 0;
                                                   x = 0;
                                                   nega = 0;
@@ -72,7 +72,7 @@
 
                                                   nbrbis = res;
                                                   res = 0;
-                                                  i=3;
+                                                  nbrope=3;
                                                   dot = 0;
                                                   x = 0;
                                                   nega = 0;
@@ -84,7 +84,7 @@
 
                                                   nbrbis = res;
                                                   res = 0;
-                                                  i=4;
+                                                  nbrope=4;
                                                   dot = 0;
                                                   x = 0;
                                                   nega = 0;
@@ -96,13 +96,13 @@
 
                                                throw "ça n'arrive jamais";
                                     }
-                                        return i;
+                                        return nbrope;
                                        }
                                        float calculatrice::result(E_result result)
                                        {
                                         switch (result) {
                                         case Resultend:
-                                            if(i==1)
+                                            if(nbrope==1)
                                             {
                                                 resegal = nbrbis * res;
                                                 nbrbis = 0;
@@ -113,7 +113,7 @@
 
 
                                             }
-                                            if(i==2)
+                                            if(nbrope==2)
                                             {
                                                 resegal = nbrbis - res;
                                                  nbrbis = 0;
@@ -123,7 +123,7 @@
                                                  nega = 0;
 
                                             }
-                                            if(i==3)
+                                            if(nbrope==3)
                                             {
                                                 resegal = nbrbis + res;
                                                  nbrbis = 0;
@@ -133,7 +133,7 @@
                                                  nega = 0;
 
                                             }
-                                            if(i==4)
+                                            if(nbrope==4)
                                             {
                                                 resegal = nbrbis / res;
                                                  nbrbis = 0;
