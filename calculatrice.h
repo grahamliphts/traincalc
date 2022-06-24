@@ -12,13 +12,14 @@ class calculatrice : public QObject
 {
     Q_OBJECT
 private:
-    float res;
-    float nbrbis;
-    int nbrope;
-    float resegal;
+    double res;
+    double nbrbis;
+    double nbrope;
+    double resegal;
     int dot;
-    int x;
+    double x;
     int nega;
+    double supval;
 
 public:
     enum E_ope {
@@ -39,11 +40,11 @@ public:
     E_result getRes() const;
 
     explicit calculatrice(QObject *parent = nullptr);
-    Q_INVOKABLE float keyboard(float nbinput);
-    Q_INVOKABLE int operate (E_ope);
-    Q_INVOKABLE float result (E_result);
+    Q_INVOKABLE double keyboard(double nbinput);
+    Q_INVOKABLE double operate (E_ope);
+    Q_INVOKABLE double result (E_result);
     Q_INVOKABLE void reset (void);
-    Q_INVOKABLE float sup (void);
+    Q_INVOKABLE double sup (void);
     Q_INVOKABLE int nbdot(void);
     Q_INVOKABLE int negative(void);
 

@@ -21,20 +21,7 @@
                                         anchors.horizontalCenter: parent.horizontalCenter
                                         height: parent.height/6
                                         width: parent.width
-
                                         color : "black"
-                                        Button {
-                                            id : buttonexit
-                                            anchors.top: parent.top
-                                            anchors.left : parent.left
-                                            font.pointSize: parent.height/10
-                                            height : parent.height / 5
-                                            width : parent.width /12
-                                            text : qsTr("exit")
-                                            onClicked: {
-                                             Qt.quit()
-                                            }
-                                        }
 
                                         Text {
                                                   id: resval
@@ -76,10 +63,10 @@
                                             }
                                             Button{
                                                 id : buttonmultiply
-                                                text : "x"
-                                                height : parent.height /4
+                                             height : parent.height /4
                                                 width: parent.width/5
                                                 font.pointSize: parent.height/10
+                                                text : "x"
                                                 anchors.left: button6.right
                                                 anchors.top: buttonadd.bottom
                                                 onClicked: {
@@ -121,7 +108,7 @@
                                                 anchors.top: button8.bottom
                                                 anchors.left : button7.right
                                                 onClicked: {
-                                                  resval.text = myCalculatrice.keyboard(0)
+                                                  resval.text = myCalculatrice.keyboard(0.00000000)
 
                                                 }
                                             }
@@ -134,7 +121,7 @@
                                                 anchors.leftMargin: parent.margin
                                                 anchors.top: parent.top
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.keyboard(1)
+                                                    resval.text = myCalculatrice.keyboard(1.000000000)
 
                                                 }
                                             }
@@ -147,7 +134,7 @@
 
                                                 anchors.left: button1.right
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.keyboard(2)
+                                                    resval.text = myCalculatrice.keyboard(2.00000000)
 
                                                 }
                                             }
@@ -159,7 +146,7 @@
                                                 width: parent.width/5
                                                 anchors.left: button2.right
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.keyboard(3)
+                                                    resval.text = myCalculatrice.keyboard(3.00000000)
 
                                                 }
                                             }
@@ -172,7 +159,7 @@
                                                 anchors.top: button1.bottom
                                                 onClicked: {
 
-                                                    resval.text = myCalculatrice.keyboard(4)
+                                                    resval.text = myCalculatrice.keyboard(4.00000000)
                                                 }
                                             }
                                             Button{
@@ -184,7 +171,7 @@
                                                 anchors.left: button4.right
                                                 anchors.top: button2.bottom
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.keyboard(5)
+                                                    resval.text = myCalculatrice.keyboard(5.00000000)
 
                                                 }
                                             }
@@ -197,7 +184,7 @@
                                                 height : parent.height /4
                                                 width: parent.width/5
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.keyboard(6)
+                                                    resval.text = myCalculatrice.keyboard(6.000000000)
 
                                                 }
                                             }
@@ -209,7 +196,7 @@
                                                 width: parent.width/5
                                                 anchors.top: button4.bottom
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.keyboard(7)
+                                                    resval.text = myCalculatrice.keyboard(7.000000000)
 
                                                 }
                                             }
@@ -222,7 +209,7 @@
                                                 anchors.left: button7.right
                                                 anchors.top: button5.bottom
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.keyboard(8)
+                                                    resval.text = myCalculatrice.keyboard(8.000000000)
 
                                                 }
                                             }
@@ -236,7 +223,7 @@
                                                 anchors.left: button8.right
 
                                                 onClicked: {
-                                                    resval.text = myCalculatrice.keyboard(9)
+                                                    resval.text = myCalculatrice.keyboard(9.000000000)
 
                                                 }
                                             }
@@ -276,6 +263,7 @@
                                                 width : parent.width/5
                                                 onClicked: {
                                                     resval.text = myCalculatrice.sup()
+
                                                 }
                                             }
                                             Button {

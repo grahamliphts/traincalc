@@ -10,16 +10,17 @@
                                     dot = 0;
                                     x = 0;
                                     nega = 0;
+                                    supval = 0;
                                     }
 
-                                    float calculatrice::keyboard(float nbinput)
+                                    double calculatrice::keyboard(double nbinput)
                                     {
                                         if (nega == 1)
                                         {
                                             if (dot == 1)
                                             {
                                                 x++;
-                                                res = res + (-nbinput/(pow(10,x)));
+                                                res = res + (-nbinput/(double (pow(10.0000000,x))));
                                                 }
                                             else {
                                                 res = res*10 + (-nbinput);
@@ -36,10 +37,11 @@
                                              res = res*10 + nbinput;
                                          }
                                         }
-                                        return res ;
+
+                                        return res;
                                     }
 
-                                       int calculatrice::operate(E_ope ope)// E_result result)
+                                       double calculatrice::operate(E_ope ope)// E_result result)
                                        {
 
 
@@ -98,7 +100,7 @@
                                     }
                                         return nbrope;
                                        }
-                                       float calculatrice::result(E_result result)
+                                       double calculatrice::result(E_result result)
                                        {
                                         switch (result) {
                                         case Resultend:
@@ -161,10 +163,12 @@
 
 
                                      }
-                                     float calculatrice::sup(void)
+                                     double calculatrice::sup(void)
                                      {
-                                         res = res/10;
-                                         return res;
+
+                                             supval = 1;
+
+                                         return supval;
                                      }
                                      int calculatrice::nbdot(void)
                                      {
